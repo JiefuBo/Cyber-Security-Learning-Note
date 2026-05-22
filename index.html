@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Security Learning Note</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f172a;
+      --surface: rgba(15, 23, 42, 0.95);
+      --surface-strong: rgba(30, 41, 59, 0.98);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-strong: #60a5fa;
+      --border: rgba(148, 163, 184, 0.2);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), transparent 28%), linear-gradient(180deg, #020617 0%, #0b1225 100%); color: var(--text); }
+    body { line-height: 1.65; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-strong); }
+    .page { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; }
+    .hero { padding: 44px 32px; margin-bottom: 32px; border: 1px solid var(--border); border-radius: 28px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(16px); }
+    .hero h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 3.4rem); letter-spacing: -0.04em; }
+    .hero p { max-width: 42rem; color: var(--muted); margin: 0; }
+    .hero .pill { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: var(--text); background: rgba(56, 189, 248, 0.1); padding: 10px 16px; border-radius: 999px; border: 1px solid rgba(56, 189, 248, 0.12); font-size: 0.95rem; }
+    .summary { display: grid; gap: 16px; margin: 32px 0; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .card { border: 1px solid var(--border); border-radius: 22px; padding: 22px; background: var(--surface); }
+    .card h2 { margin: 0 0 12px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .search-panel { margin: 0 auto 32px; max-width: 640px; }
+    .search-panel input { width: 100%; border: 1px solid var(--border); border-radius: 18px; padding: 16px 18px; background: rgba(15, 23, 42, 0.9); color: var(--text); font-size: 1rem; outline: none; }
+    .search-panel input::placeholder { color: var(--muted); }
+    .notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .note-item { display: block; width: 100%; border: 1px solid var(--border); border-radius: 18px; padding: 18px 20px; background: var(--surface-strong); transition: transform 0.2s ease, border-color 0.2s ease; }
+    .note-item:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, 0.35); }
+    .note-title { margin: 0; font-size: 1rem; font-weight: 600; }
+    .note-meta { margin-top: 8px; color: var(--muted); font-size: 0.93rem; }
+    .footer { margin-top: 44px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.14); color: var(--muted); font-size: 0.95rem; }
+    .footer a { color: var(--accent); }
+    @media (max-width: 640px) {
+      .hero { padding: 28px 20px; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <h1>Cyber Security Learning Note</h1>
+      <p>这是一个基于 GitHub 仓库的网络安全学习笔记集合导航页。页面已准备好通过 <strong>github.visionstudio.asia</strong> 发布为静态站点，并列出当前项目中的所有笔记文件。</p>
+      <div class="pill">静态站点导航 • 38 条学习笔记 • 自定义域名 CNAME</div>
+    </section>
+
+    <div class="summary">
+      <div class="card">
+        <h2>站点信息</h2>
+        <p>当前仓库已配置 CNAME，站点域名为 <strong>github.visionstudio.asia</strong>。发布后访问此页面即可查看全文档导航。</p>
+      </div>
+      <div class="card">
+        <h2>文件统计</h2>
+        <p>总计 38 个学习笔记文件，覆盖网络分析、DNS 攻击、密码学、入侵检测、Web 安全、系统安全、数据库安全、身份认证等主题。</p>
+      </div>
+      <div class="card">
+        <h2>当前状态</h2>
+        <p>README.md 目前为占位内容，建议使用此 index.html 作为项目首页并在 README 中补充仓库说明。</p>
+      </div>
+    </div>
+
+    <section class="search-panel">
+      <input id="search" type="search" placeholder="搜索笔记标题，例如：Web、安全、Metasploit..." aria-label="搜索笔记标题" />
+    </section>
+
+    <ul id="notes" class="notes">
+      <li><a class="note-item" href="01 - Network Analysis and Web Reconnaissance Notes.md"><h3 class="note-title">01 - Network Analysis and Web Reconnaissance Notes</h3><div class="note-meta">网络分析与 Web 侦查</div></a></li>
+      <li><a class="note-item" href="02 - DNS Spoofing and Cache Poisoning Study Notes.md"><h3 class="note-title">02 - DNS Spoofing and Cache Poisoning Study Notes</h3><div class="note-meta">DNS 欺骗与缓存中毒</div></a></li>
+      <li><a class="note-item" href="03 - DNS Pharming and Network Security Notes.md"><h3 class="note-title">03 - DNS Pharming and Network Security Notes</h3><div class="note-meta">DNS 劫持与网络安全</div></a></li>
+      <li><a class="note-item" href="04 - Cryptography, SSL, and X.509 Certificate Notes.md"><h3 class="note-title">04 - Cryptography, SSL, and X.509 Certificate Notes</h3><div class="note-meta">密码学、SSL 与 X.509 证书</div></a></li>
+      <li><a class="note-item" href="05 - TCP IP Based Attack Analysis Notes.md"><h3 class="note-title">05 - TCP IP Based Attack Analysis Notes</h3><div class="note-meta">TCP/IP 攻击分析</div></a></li>
+      <li><a class="note-item" href="06 - TCP IP Security and Network Attack Analysis Notes.md"><h3 class="note-title">06 - TCP IP Security and Network Attack Analysis Notes</h3><div class="note-meta">TCP/IP 安全与网络攻击分析</div></a></li>
+      <li><a class="note-item" href="07 - Snort Intrusion Detection System Notes.md"><h3 class="note-title">07 - Snort Intrusion Detection System Notes</h3><div class="note-meta">Snort 入侵检测系统</div></a></li>
+      <li><a class="note-item" href="08 - Network Security, Juniper Firewall, and Phishing Analysis Notes.md"><h3 class="note-title">08 - Network Security, Juniper Firewall, and Phishing Analysis Notes</h3><div class="note-meta">网络安全、Juniper 防火墙与钓鱼分析</div></a></li>
+      <li><a class="note-item" href="09 - IPTables and Firewall Authentication Notes"><h3 class="note-title">09 - IPTables and Firewall Authentication Notes</h3><div class="note-meta">IPTables 与防火墙认证</div></a></li>
+      <li><a class="note-item" href="10 - Cyber Security 101.md"><h3 class="note-title">10 - Cyber Security 101</h3><div class="note-meta">网络安全基础</div></a></li>
+      <li><a class="note-item" href="11 - Web Security Learning Notes.md"><h3 class="note-title">11 - Web Security Learning Notes</h3><div class="note-meta">Web 安全学习</div></a></li>
+      <li><a class="note-item" href="12 - Public Key Infrastructure and Cybersecurity Notes.md"><h3 class="note-title">12 - Public Key Infrastructure and Cybersecurity Notes</h3><div class="note-meta">PKI 与网络安全</div></a></li>
+      <li><a class="note-item" href="13 - Transport Layer Security Notes.md"><h3 class="note-title">13 - Transport Layer Security Notes</h3><div class="note-meta">传输层安全</div></a></li>
+      <li><a class="note-item" href="14 - System Security Notes.md"><h3 class="note-title">14 - System Security Notes</h3><div class="note-meta">系统安全</div></a></li>
+      <li><a class="note-item" href="15 - Intrusion Detection and Prevention Notes.md"><h3 class="note-title">15 - Intrusion Detection and Prevention Notes</h3><div class="note-meta">入侵检测与防御</div></a></li>
+      <li><a class="note-item" href="16 - Email Security and Social Engineering Notes.md"><h3 class="note-title">16 - Email Security and Social Engineering Notes</h3><div class="note-meta">邮件安全与社会工程学</div></a></li>
+      <li><a class="note-item" href="17 - VPN and Firewall Security Notes.md"><h3 class="note-title">17 - VPN and Firewall Security Notes</h3><div class="note-meta">VPN 与防火墙安全</div></a></li>
+      <li><a class="note-item" href="18 - Access Control and Wireless Security Notes.md"><h3 class="note-title">18 - Access Control and Wireless Security Notes</h3><div class="note-meta">访问控制与无线安全</div></a></li>
+      <li><a class="note-item" href="19 - Security Operations Center and Network Security Notes.md"><h3 class="note-title">19 - Security Operations Center and Network Security Notes</h3><div class="note-meta">安全运营中心与网络安全</div></a></li>
+      <li><a class="note-item" href="20 - Advanced Security Operations Center Notes.md"><h3 class="note-title">20 - Advanced Security Operations Center Notes</h3><div class="note-meta">高级安全运营中心</div></a></li>
+      <li><a class="note-item" href="21 - Sensitive Data Exposure and Network Traffic Analysis.md"><h3 class="note-title">21 - Sensitive Data Exposure and Network Traffic Analysis</h3><div class="note-meta">敏感数据泄露与网络流量分析</div></a></li>
+      <li><a class="note-item" href="22 - SQL Injection and Database Security Notes.md"><h3 class="note-title">22 - SQL Injection and Database Security Notes</h3><div class="note-meta">SQL 注入与数据库安全</div></a></li>
+      <li><a class="note-item" href="23 - Vulnerable Components and Software Security Notes.md"><h3 class="note-title">23 - Vulnerable Components and Software Security Notes</h3><div class="note-meta">易受攻击组件与软件安全</div></a></li>
+      <li><a class="note-item" href="24 - Authentication Flaws Security Notes Markdown.md"><h3 class="note-title">24 - Authentication Flaws Security Notes Markdown</h3><div class="note-meta">认证缺陷安全笔记</div></a></li>
+      <li><a class="note-item" href="25 - Metasploit And Exploitation Notes Markdown.md"><h3 class="note-title">25 - Metasploit And Exploitation Notes Markdown</h3><div class="note-meta">Metasploit 与漏洞利用</div></a></li>
+      <li><a class="note-item" href="26 - Metasploit Intrusions And Ids Notes Markdown.md"><h3 class="note-title">26 - Metasploit Intrusions And Ids Notes Markdown</h3><div class="note-meta">Metasploit 入侵与 IDS</div></a></li>
+      <li><a class="note-item" href="27 - Nmap And Wireshark Security Notes Markdown.md"><h3 class="note-title">27 - Nmap And Wireshark Security Notes Markdown</h3><div class="note-meta">Nmap 与 Wireshark 安全笔记</div></a></li>
+      <li><a class="note-item" href="28 - Introduction to System Security Notes.md"><h3 class="note-title">28 - Introduction to System Security Notes</h3><div class="note-meta">系统安全入门</div></a></li>
+      <li><a class="note-item" href="29 - Operating System Security Notes.md"><h3 class="note-title">29 - Operating System Security Notes</h3><div class="note-meta">操作系统安全</div></a></li>
+      <li><a class="note-item" href="30 - Network Security Notes.md"><h3 class="note-title">30 - Network Security Notes</h3><div class="note-meta">网络安全</div></a></li>
+      <li><a class="note-item" href="31 - Database Security Notes.md"><h3 class="note-title">31 - Database Security Notes</h3><div class="note-meta">数据库安全</div></a></li>
+      <li><a class="note-item" href="32 - Implementation Security Notes.md"><h3 class="note-title">32 - Implementation Security Notes</h3><div class="note-meta">实现安全</div></a></li>
+      <li><a class="note-item" href="33 - Web Security Notes.md"><h3 class="note-title">33 - Web Security Notes</h3><div class="note-meta">Web 安全</div></a></li>
+      <li><a class="note-item" href="34 - Security Industry Notes.md"><h3 class="note-title">34 - Security Industry Notes</h3><div class="note-meta">安全行业笔记</div></a></li>
+      <li><a class="note-item" href="35 - Identity And Access Management Notes.md"><h3 class="note-title">35 - Identity And Access Management Notes</h3><div class="note-meta">身份与访问管理</div></a></li>
+      <li><a class="note-item" href="36 - System Security Notes.md"><h3 class="note-title">36 - System Security Notes</h3><div class="note-meta">系统安全（重复主题）</div></a></li>
+      <li><a class="note-item" href="37 - System Hardening Notes.md"><h3 class="note-title">37 - System Hardening Notes</h3><div class="note-meta">系统加固</div></a></li>
+      <li><a class="note-item" href="38 - Security Tools And Roles Notes.md"><h3 class="note-title">38 - Security Tools And Roles Notes</h3><div class="note-meta">安全工具与角色</div></a></li>
+    </ul>
+
+    <div class="footer">
+      <p>若要进一步优化项目，可将此页面设为 GitHub Pages 静态首页，并在 <code>README.md</code> 中补充仓库说明与访问说明。</p>
+      <p>当前项目存在一些小问题：部分文件名称没有 .md 后缀，且有重复主题文件名。建议统一命名规范以提升可读性。</p>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('search');
+    const notes = Array.from(document.querySelectorAll('#notes .note-item'));
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      notes.forEach(node => {
+        const title = node.textContent.toLowerCase();
+        node.parentElement.style.display = title.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

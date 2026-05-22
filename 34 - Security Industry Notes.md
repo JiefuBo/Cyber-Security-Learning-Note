@@ -1,4 +1,4 @@
-# Guest Lecture Security Industry Notes
+# Security Industry Notes
 
 ## Overview
 

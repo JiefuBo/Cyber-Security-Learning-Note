@@ -19,7 +19,7 @@ The numbered Markdown files provide a learning path across different areas of cy
 
 ## How to Use
 
-- Open `index.html` for a searchable navigation page.
+- Open `https://github.visionstudio.asia` for a searchable navigation page.
 - Read the numbered Markdown files in sequence for a broad learning path.
 - Jump directly to a specific topic when reviewing a concept, tool, or attack category.
 - Use the notes as a reference while studying labs, preparing reports, or reviewing cybersecurity fundamentals.

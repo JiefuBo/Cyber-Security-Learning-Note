@@ -18,3 +18,7 @@ If GitHub Pages is enabled, publish this repository using `index.html` as the ho
 
 - The repository currently contains 38 study note files.
 - Some filenames may need consistent `.md` extensions and standardized naming. Consider revising titles and categories for better organization.
+
+
+<!--START_SECTION:buy-me-a-coffee-->
+<!--END_SECTION:buy-me-a-coffe-->
